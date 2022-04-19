@@ -7,7 +7,7 @@ require("dotenv").config();
 const app = express();
 app.use(cors());
 app.use(express.json());
-const port = 5000;
+const port = process.env.PORT || 5000;
 
 //
 const uri = `mongodb+srv://${process.env.SECRET_USER}:${process.env.SECRET_PASS}@cluster0.i3j1g.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
@@ -50,7 +50,7 @@ async function run() {
 run().catch(console.dir);
 //
 app.get("/", (req, res) => {
-  res.send("Hello World!");
+  res.send("assigenment -11 server");
 });
 
 app.listen(port, () => {
